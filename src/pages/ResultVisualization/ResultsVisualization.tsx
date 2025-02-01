@@ -31,27 +31,34 @@ const ResultsVisualization: React.FC = () => {
   // Update grid data for each step and metric
   useEffect(() => {
     if (iterations.length > 0) {
-      setGridData(() => {
-        const newGrid = Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0)); // Ensure a fresh grid
-  
-        const stepData = iterations[currentStep]?.values;
+      setGridData((prevGrid) => {
+        const newGrid = prevGrid.map((row) => [...row]); // Clone previous grid to retain prior values
+
+        const stepData = iterations[currentStep]?.values; // Get data for the current step
+
         stepData?.forEach(([x, y, value]: [number, number, { temperature: string; pressure: number; kelvin: string }]) => {
           if (value && value[metric] !== undefined) {
+            // Iterate over a 3x3 block starting at (x, y)
             for (let i = 0; i < 3; i++) {
               for (let j = 0; j < 3; j++) {
                 const newX = x + i;
                 const newY = y + j;
-  
+
+                // Ensure we stay within the bounds of the 10x10 grid
                 if (newX < GRID_SIZE && newY < GRID_SIZE) {
                   const numericValue = typeof value[metric] === "string" ? parseFloat(value[metric]) : value[metric];
-                  newGrid[newX][newY] = numericValue || 0;
+
+                  // Only update if the cell is empty (0), to prevent overwriting
+                  if (newGrid[newX][newY] === 0) {
+                    newGrid[newX][newY] = numericValue || 0;
+                  }
                 }
               }
             }
           }
         });
-  
-        return newGrid; // Ensure full update of the grid
+
+        return newGrid; // Return the updated grid for the current step
       });
     }
   }, [currentStep, metric, iterations]);
