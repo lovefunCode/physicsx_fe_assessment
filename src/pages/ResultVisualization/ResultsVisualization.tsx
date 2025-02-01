@@ -11,6 +11,22 @@ const ResultsVisualization: React.FC = () => {
   const [iterations, setIterations] = useState<any[]>([]); // Store all metrics data
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [initGrid, setInitGrid] = useState<any>(null); // Store initial grid data
+
+  // Fetch initial grid data from API
+  useEffect(() => {
+     const fetchInitGrid = async () => {
+      try {
+        const allDataResponse = await fetch("http://localhost:5001/api/grid");
+        const data = await allDataResponse.json();
+        console.log("---fetchInitGrid", data);
+        setInitGrid(data.grid); // Store the initial grid values
+      } catch (error) {
+        console.error("Failed to fetch grid data:", error);
+      }
+    };
+    fetchInitGrid();
+  }, []);
 
   // Fetch initial grid data from API
   useEffect(() => {
@@ -29,8 +45,9 @@ const ResultsVisualization: React.FC = () => {
   }, []);
 
   // Update grid data for each step and metric
+  // Update grid data progressively for each step and metric
   useEffect(() => {
-    if (iterations.length > 0) {
+    if (iterations.length > 0 && initGrid) {
       setGridData((prevGrid) => {
         const newGrid = prevGrid.map((row) => [...row]); // Clone previous grid to retain prior values
 
@@ -46,7 +63,9 @@ const ResultsVisualization: React.FC = () => {
 
                 // Ensure we stay within the bounds of the 10x10 grid
                 if (newX < GRID_SIZE && newY < GRID_SIZE) {
-                  const numericValue = typeof value[metric] === "string" ? parseFloat(value[metric]) : value[metric];
+                  const numericValue = typeof value[metric] === "string" 
+                    ? parseFloat(value[metric].replace(/[^0-9.-]+/g, "")) // Clean the string and parse it as a number
+                    : value[metric];
 
                   // Only update if the cell is empty (0), to prevent overwriting
                   if (newGrid[newX][newY] === 0) {
@@ -61,7 +80,7 @@ const ResultsVisualization: React.FC = () => {
         return newGrid; // Return the updated grid for the current step
       });
     }
-  }, [currentStep, metric, iterations]);
+  }, [currentStep, metric, iterations, initGrid]);
   
   
   
