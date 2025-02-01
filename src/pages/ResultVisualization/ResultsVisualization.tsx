@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./ResultsVisualization.css";
 import Grid from "../../Components/Grid/Grid";
 
-import {createColorScale} from '../../utils/createColorScale'
+import { createColorScale } from '../../utils/createColorScale'
 const GRID_SIZE = 10; // Assuming a 10x10 grid
 
 const ResultsVisualization: React.FC = () => {
@@ -29,28 +29,42 @@ const ResultsVisualization: React.FC = () => {
     fetchGridData();
   }, []);
 
-  // Update grid data when the current step changes
   useEffect(() => {
     if (iterations.length > 0) {
-      // Create an empty grid (10x10)
-      const newGrid = Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0));
-
-      // Get the data for the selected metric (temperature, pressure, or kelvin)
-      const stepData = iterations[currentStep]?.values;
-
-      // Loop through the values for the current step
-      stepData?.forEach(([x, y, value]: [number, number, { temperature: string; pressure: number; kelvin: string }]) => {
-        // TypeScript now knows that 'metric' is one of the keys of 'value'
-        if (value && value[metric] !== undefined) {
-          // Update the grid with the selected metric value
-          newGrid[x][y] = value[metric];
-        }
+      setGridData((prevGrid) => {
+        const newGrid = prevGrid.map((row) => [...row]); // Clone the previous grid
+  
+        const stepData = iterations[currentStep]?.values;
+  
+        stepData?.forEach(([x, y, value]: [number, number, { temperature: string; pressure: number; kelvin: string }]) => {
+          if (value && value[metric] !== undefined) {
+            for (let i = 0; i < 3; i++) {
+              for (let j = 0; j < 3; j++) {
+                const newX = x + i;
+                const newY = y + j;
+  
+                // ✅ Update the entire 10x10 grid (remove any size limitation)
+                if (newX < GRID_SIZE && newY < GRID_SIZE) {
+                  const numericValue =
+                    typeof value[metric] === "string"
+                      ? parseFloat(value[metric]) // Convert "48.0°C" → 48.0
+                      : value[metric];
+  
+                  if (newGrid[newX][newY] === 0) {
+                    newGrid[newX][newY] = numericValue || 0;
+                  }
+                }
+              }
+            }
+          }
+        });
+  
+        return newGrid;
       });
-
-      setGridData(newGrid); // Update the grid data
     }
-  }, [currentStep, metric, iterations]); // Re-run whenever currentStep, metric, or iterations change
-
+  }, [currentStep, metric, iterations]);
+  
+  
   // Animation handling
   useEffect(() => {
     if (!isPlaying) return;
@@ -76,7 +90,7 @@ const ResultsVisualization: React.FC = () => {
     setCurrentStep(0);
   };
 
-   // Get the color scale for the grid
+  // Get the color scale for the grid
   const colorScale = createColorScale(gridData);
 
   return (
