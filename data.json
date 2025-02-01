@@ -1,0 +1,965 @@
+[
+    { 
+        "iterations": [
+            {
+                "step": 0,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "48.0°C",
+                            "pressure": 1069,
+                            "kelvin": "48.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "-39.0°C",
+                            "pressure": 1397,
+                            "kelvin": "-39.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "10.0°C",
+                            "pressure": 1633,
+                            "kelvin": "10.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "-36.0°C",
+                            "pressure": 1198,
+                            "kelvin": "-36.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "-42.0°C",
+                            "pressure": 1134,
+                            "kelvin": "-42.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-3.0°C",
+                            "pressure": 1559,
+                            "kelvin": "-3.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "-32.0°C",
+                            "pressure": 1243,
+                            "kelvin": "-32.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "29.0°C",
+                            "pressure": 1420,
+                            "kelvin": "29.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "-2.0°C",
+                            "pressure": 1277,
+                            "kelvin": "-2.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 1,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "-50.0°C",
+                            "pressure": 1343,
+                            "kelvin": "-50.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "35.0°C",
+                            "pressure": 1424,
+                            "kelvin": "35.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "41.0°C",
+                            "pressure": 1772,
+                            "kelvin": "41.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "-46.0°C",
+                            "pressure": 1286,
+                            "kelvin": "-46.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "-3.0°C",
+                            "pressure": 1902,
+                            "kelvin": "-3.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-28.0°C",
+                            "pressure": 1606,
+                            "kelvin": "-28.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "38.0°C",
+                            "pressure": 1634,
+                            "kelvin": "38.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "22.0°C",
+                            "pressure": 1509,
+                            "kelvin": "22.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "-20.0°C",
+                            "pressure": 1150,
+                            "kelvin": "-20.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 2,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "16.0°C",
+                            "pressure": 1908,
+                            "kelvin": "16.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "11.0°C",
+                            "pressure": 1465,
+                            "kelvin": "11.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "9.0°C",
+                            "pressure": 1431,
+                            "kelvin": "9.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "14.0°C",
+                            "pressure": 1803,
+                            "kelvin": "14.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "11.0°C",
+                            "pressure": 1086,
+                            "kelvin": "11.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "13.0°C",
+                            "pressure": 1890,
+                            "kelvin": "13.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "-39.0°C",
+                            "pressure": 1154,
+                            "kelvin": "-39.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "-50.0°C",
+                            "pressure": 1986,
+                            "kelvin": "-50.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "-5.0°C",
+                            "pressure": 1722,
+                            "kelvin": "-5.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 3,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "31.0°C",
+                            "pressure": 1377,
+                            "kelvin": "31.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "-23.0°C",
+                            "pressure": 1998,
+                            "kelvin": "-23.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "-19.0°C",
+                            "pressure": 1663,
+                            "kelvin": "-19.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "15.0°C",
+                            "pressure": 1075,
+                            "kelvin": "15.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "12.0°C",
+                            "pressure": 1646,
+                            "kelvin": "12.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-3.0°C",
+                            "pressure": 1143,
+                            "kelvin": "-3.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "18.0°C",
+                            "pressure": 1175,
+                            "kelvin": "18.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "-11.0°C",
+                            "pressure": 1737,
+                            "kelvin": "-11.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "-19.0°C",
+                            "pressure": 1661,
+                            "kelvin": "-19.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 4,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "9.0°C",
+                            "pressure": 1796,
+                            "kelvin": "9.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "-49.0°C",
+                            "pressure": 1608,
+                            "kelvin": "-49.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "-46.0°C",
+                            "pressure": 1521,
+                            "kelvin": "-46.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "-19.0°C",
+                            "pressure": 1369,
+                            "kelvin": "-19.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "-44.0°C",
+                            "pressure": 1736,
+                            "kelvin": "-44.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "5.0°C",
+                            "pressure": 1754,
+                            "kelvin": "5.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "-25.0°C",
+                            "pressure": 1189,
+                            "kelvin": "-25.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "-42.0°C",
+                            "pressure": 1811,
+                            "kelvin": "-42.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "-3.0°C",
+                            "pressure": 1724,
+                            "kelvin": "-3.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 5,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "37.0°C",
+                            "pressure": 1109,
+                            "kelvin": "37.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "24.0°C",
+                            "pressure": 1041,
+                            "kelvin": "24.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "43.0°C",
+                            "pressure": 1552,
+                            "kelvin": "43.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "47.0°C",
+                            "pressure": 1728,
+                            "kelvin": "47.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "32.0°C",
+                            "pressure": 1216,
+                            "kelvin": "32.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-50.0°C",
+                            "pressure": 1639,
+                            "kelvin": "-50.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "-3.0°C",
+                            "pressure": 1070,
+                            "kelvin": "-3.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "2.0°C",
+                            "pressure": 1659,
+                            "kelvin": "2.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "12.0°C",
+                            "pressure": 1473,
+                            "kelvin": "12.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 6,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "9.0°C",
+                            "pressure": 1734,
+                            "kelvin": "9.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "-8.0°C",
+                            "pressure": 1204,
+                            "kelvin": "-8.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "-39.0°C",
+                            "pressure": 1113,
+                            "kelvin": "-39.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "-45.0°C",
+                            "pressure": 1414,
+                            "kelvin": "-45.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "-30.0°C",
+                            "pressure": 1691,
+                            "kelvin": "-30.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-32.0°C",
+                            "pressure": 1037,
+                            "kelvin": "-32.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "-2.0°C",
+                            "pressure": 1375,
+                            "kelvin": "-2.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "50.0°C",
+                            "pressure": 1146,
+                            "kelvin": "50.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "22.0°C",
+                            "pressure": 1655,
+                            "kelvin": "22.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 7,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "46.0°C",
+                            "pressure": 1049,
+                            "kelvin": "46.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "-45.0°C",
+                            "pressure": 2000,
+                            "kelvin": "-45.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "-7.0°C",
+                            "pressure": 1037,
+                            "kelvin": "-7.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "-21.0°C",
+                            "pressure": 1973,
+                            "kelvin": "-21.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "-49.0°C",
+                            "pressure": 1881,
+                            "kelvin": "-49.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-33.0°C",
+                            "pressure": 1438,
+                            "kelvin": "-33.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "-38.0°C",
+                            "pressure": 1432,
+                            "kelvin": "-38.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "-44.0°C",
+                            "pressure": 1031,
+                            "kelvin": "-44.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "26.0°C",
+                            "pressure": 1944,
+                            "kelvin": "26.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 8,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "-24.0°C",
+                            "pressure": 1361,
+                            "kelvin": "-24.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "41.0°C",
+                            "pressure": 1946,
+                            "kelvin": "41.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "1.0°C",
+                            "pressure": 1814,
+                            "kelvin": "1.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "40.0°C",
+                            "pressure": 1088,
+                            "kelvin": "40.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "-37.0°C",
+                            "pressure": 1437,
+                            "kelvin": "-37.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-33.0°C",
+                            "pressure": 1535,
+                            "kelvin": "-33.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "9.0°C",
+                            "pressure": 1854,
+                            "kelvin": "9.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "50.0°C",
+                            "pressure": 1041,
+                            "kelvin": "50.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "18.0°C",
+                            "pressure": 1261,
+                            "kelvin": "18.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 9,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "2.0°C",
+                            "pressure": 1035,
+                            "kelvin": "2.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "43.0°C",
+                            "pressure": 1377,
+                            "kelvin": "43.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "-26.0°C",
+                            "pressure": 1604,
+                            "kelvin": "-26.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "-5.0°C",
+                            "pressure": 1398,
+                            "kelvin": "-5.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "17.0°C",
+                            "pressure": 1768,
+                            "kelvin": "17.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "24.0°C",
+                            "pressure": 1419,
+                            "kelvin": "24.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "23.0°C",
+                            "pressure": 1972,
+                            "kelvin": "23.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "10.0°C",
+                            "pressure": 1165,
+                            "kelvin": "10.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "-40.0°C",
+                            "pressure": 1977,
+                            "kelvin": "-40.03K"
+                        }
+                    ]
+                ]
+            },
+            {
+                "step": 10,
+                "values": [
+                    [
+                        0,
+                        0,
+                        {
+                            "temperature": "-43.0°C",
+                            "pressure": 1411,
+                            "kelvin": "-43.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        1,
+                        {
+                            "temperature": "43.0°C",
+                            "pressure": 1299,
+                            "kelvin": "43.03K"
+                        }
+                    ],
+                    [
+                        0,
+                        2,
+                        {
+                            "temperature": "38.0°C",
+                            "pressure": 1147,
+                            "kelvin": "38.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        0,
+                        {
+                            "temperature": "4.0°C",
+                            "pressure": 1820,
+                            "kelvin": "4.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        1,
+                        {
+                            "temperature": "-15.0°C",
+                            "pressure": 1702,
+                            "kelvin": "-15.03K"
+                        }
+                    ],
+                    [
+                        1,
+                        2,
+                        {
+                            "temperature": "-49.0°C",
+                            "pressure": 1345,
+                            "kelvin": "-49.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        0,
+                        {
+                            "temperature": "-37.0°C",
+                            "pressure": 1628,
+                            "kelvin": "-37.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        1,
+                        {
+                            "temperature": "35.0°C",
+                            "pressure": 1014,
+                            "kelvin": "35.03K"
+                        }
+                    ],
+                    [
+                        2,
+                        2,
+                        {
+                            "temperature": "42.0°C",
+                            "pressure": 1208,
+                            "kelvin": "42.03K"
+                        }
+                    ]
+                ]
+            }
+        ],
+        "grid" : {
+            "temperature": [
+              [ "1375.0°C", "1628.0°C", "1743.0°C" ],
+              [ "1312.0°C", "1116.0°C", "1728.0°C" ],
+              [ "1896.0°C", "1047.0°C", "1375.0°C" ]
+            ],
+            "pressure": [ [ 1059, 1701, 1191 ], [ 1248, 1419, 1036 ], [ 1873, 1977, 1891 ] ],
+            "kelvin": [
+              [ "1986.03K", "1252.03K", "1350.03K" ],
+              [ "1276.03K", "1771.03K", "1491.03K" ],
+              [ "1614.03K", "1193.03K", "1311.03K" ]
+            ]
+        }
+    }
+]
