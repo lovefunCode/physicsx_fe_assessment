@@ -20,7 +20,6 @@ const ResultsVisualization: React.FC = () => {
           "http://localhost:5001/api/iterations"
         );
         const data = await allDataResponse.json();
-        console.log("data-----", data.iterations);
         setIterations(data.iterations);
       } catch (error) {
         console.error("Failed to fetch grid data:", error);
@@ -29,40 +28,34 @@ const ResultsVisualization: React.FC = () => {
     fetchGridData();
   }, []);
 
+  // Update grid data for each step and metric
   useEffect(() => {
     if (iterations.length > 0) {
-      setGridData((prevGrid) => {
-        const newGrid = prevGrid.map((row) => [...row]); // Clone the previous grid
+      setGridData(() => {
+        const newGrid = Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0)); // Ensure a fresh grid
   
         const stepData = iterations[currentStep]?.values;
-  
-        stepData?.forEach(([x, y, value]: [number, number, { temperature: string; pressure: number; kelvin: string }]) => {
+        stepData?.forEach(([x, y, value]) => {
           if (value && value[metric] !== undefined) {
             for (let i = 0; i < 3; i++) {
               for (let j = 0; j < 3; j++) {
                 const newX = x + i;
                 const newY = y + j;
   
-                // ✅ Update the entire 10x10 grid (remove any size limitation)
                 if (newX < GRID_SIZE && newY < GRID_SIZE) {
-                  const numericValue =
-                    typeof value[metric] === "string"
-                      ? parseFloat(value[metric]) // Convert "48.0°C" → 48.0
-                      : value[metric];
-  
-                  if (newGrid[newX][newY] === 0) {
-                    newGrid[newX][newY] = numericValue || 0;
-                  }
+                  const numericValue = typeof value[metric] === "string" ? parseFloat(value[metric]) : value[metric];
+                  newGrid[newX][newY] = numericValue || 0;
                 }
               }
             }
           }
         });
   
-        return newGrid;
+        return newGrid; // Ensure full update of the grid
       });
     }
   }, [currentStep, metric, iterations]);
+  
   
   
   // Animation handling
