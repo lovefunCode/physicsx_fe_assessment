@@ -35,7 +35,7 @@ const ResultsVisualization: React.FC = () => {
         const newGrid = Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0)); // Ensure a fresh grid
   
         const stepData = iterations[currentStep]?.values;
-        stepData?.forEach(([x, y, value]) => {
+        stepData?.forEach(([x, y, value]: [number, number, { temperature: string; pressure: number; kelvin: string }]) => {
           if (value && value[metric] !== undefined) {
             for (let i = 0; i < 3; i++) {
               for (let j = 0; j < 3; j++) {
