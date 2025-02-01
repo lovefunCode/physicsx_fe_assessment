@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
 import "./ResultsVisualization.css";
-
 import Grid from "../../Components/Grid/Grid";
 
-const GRID_SIZE = 10;
-
+import {createColorScale} from '../../utils/createColorScale'
+const GRID_SIZE = 10; // Assuming a 10x10 grid
 
 const ResultsVisualization: React.FC = () => {
-  const [metric, setMetric] = useState<"temperature" | "pressure" | "kelvin">("temperature");; // Default to pressure
-  const [gridData, setGridData] = useState<number[][]>(
-    Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0))
-  );
-  const [iterations, setIterations] = useState<any>({}); // Store all metrics data
+  const [metric, setMetric] = useState<"temperature" | "pressure" | "kelvin">("pressure"); // Restrict to the valid metrics
+  const [gridData, setGridData] = useState<number[][]>(Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0)));
+  const [iterations, setIterations] = useState<any[]>([]); // Store all metrics data
   const [currentStep, setCurrentStep] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -23,45 +20,53 @@ const ResultsVisualization: React.FC = () => {
           "http://localhost:5001/api/iterations"
         );
         const data = await allDataResponse.json();
+        console.log("data-----", data.iterations);
         setIterations(data.iterations);
       } catch (error) {
         console.error("Failed to fetch grid data:", error);
       }
-
     };
     fetchGridData();
   }, []);
 
   // Update grid data when the current step changes
   useEffect(() => {
-    console.log('=======iterations', iterations)
-    if (iterations > 0) {
+    if (iterations.length > 0) {
+      // Create an empty grid (10x10)
       const newGrid = Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0));
-       // Get the data for the selected metric (temperature, pressure, or kelvin)
-       const stepData = iterations[currentStep]?.values;
 
-       // Loop through the values for the current step
-       stepData?.forEach(([x, y, value]: [number, number, { temperature: string, pressure: number, kelvin: string }]) => {
-         // Extract the value based on the selected metric
-         if (value && value[metric] !== undefined) {
-           // Update the grid with the metric value (e.g., pressure, temperature, or kelvin)
-           newGrid[x][y] = value[metric];
-         }
-       });
-      console.log('newGrid----', newGrid)
-      setGridData(newGrid);
+      // Get the data for the selected metric (temperature, pressure, or kelvin)
+      const stepData = iterations[currentStep]?.values;
+
+      // Loop through the values for the current step
+      stepData?.forEach(([x, y, value]: [number, number, { temperature: string; pressure: number; kelvin: string }]) => {
+        // TypeScript now knows that 'metric' is one of the keys of 'value'
+        if (value && value[metric] !== undefined) {
+          // Update the grid with the selected metric value
+          newGrid[x][y] = value[metric];
+        }
+      });
+
+      setGridData(newGrid); // Update the grid data
     }
-  }, [currentStep, metric, iterations]);
+  }, [currentStep, metric, iterations]); // Re-run whenever currentStep, metric, or iterations change
 
   // Animation handling
   useEffect(() => {
     if (!isPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentStep((prevStep) => (prevStep + 1) % iterations.length);
-    }, 1000);
+      setCurrentStep((prevStep) => {
+        const nextStep = prevStep + 1;
+        if (nextStep >= iterations.length) {
+          clearInterval(interval); // Stop the animation at the last step
+          return prevStep;
+        }
+        return nextStep;
+      });
+    }, 1000); // Update every 1 second
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Cleanup on component unmount or when animation is stopped
   }, [isPlaying, iterations.length]);
 
   const playAnimation = () => setIsPlaying(true);
@@ -71,6 +76,9 @@ const ResultsVisualization: React.FC = () => {
     setCurrentStep(0);
   };
 
+   // Get the color scale for the grid
+  const colorScale = createColorScale(gridData);
+
   return (
     <div className="container">
       {/* Tabs for selecting metrics */}
@@ -79,7 +87,7 @@ const ResultsVisualization: React.FC = () => {
           <button
             key={m}
             className={metric === m ? "active" : ""}
-            onClick={() => setMetric(m)}
+            onClick={() => setMetric(m as "temperature" | "pressure" | "kelvin")}
           >
             {m.toUpperCase()}
           </button>
@@ -87,11 +95,12 @@ const ResultsVisualization: React.FC = () => {
       </div>
 
       <div className="grid">
-        {/* paste your code here */}
-        <Grid data={gridData} metric={metric} />
+        {/* Render the Grid component */}
+        <Grid data={gridData} metric={metric} colorScale={colorScale} />
       </div>
+
       <div className="controls">
-        {/* paste your code here */}
+        {/* Animation controls */}
         <button onClick={playAnimation}>Play</button>
         <button onClick={stopAnimation}>Pause</button>
         <button onClick={resetAnimation}>Reset</button>
@@ -101,7 +110,3 @@ const ResultsVisualization: React.FC = () => {
 };
 
 export default ResultsVisualization;
-function setIsPlaying(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}
-
